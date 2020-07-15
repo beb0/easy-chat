@@ -17,4 +17,8 @@ io.on('connection', function(socket){
     socket.on('message', function(message){
         io.sockets.emit('message', message)
     })
+
+    socket.on('typing', function(data) {
+        socket.broadcast.emit('typing', data)
+    })
 })
